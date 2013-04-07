@@ -6,11 +6,25 @@
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/collapse.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Shivaram Venkataraman by shivaram</title>
+    <title>Shivaram Venkataraman</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39929561-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
   </head>
 
   <body>
@@ -25,6 +39,30 @@
         <!-- section id="downloads" class="clearfix">
         <a href="https://github.com/shivaram" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section -->
+
+        <section id="links">
+        <h3>
+        <table>
+          <tr>
+            <td width="33%">
+            <a href="#projects" class="link">
+              Publications
+            </a>
+            </td>
+            <td width="33%">
+            <a href="#talks">
+              Talks
+            </a>
+            </td>
+            <td width="33%">
+            <a href="#contact">
+              Contact
+            </a>
+            </td>
+          </tr>
+        </table>
+        </h3>
+        </section>
 
         <hr>
 
@@ -43,12 +81,19 @@
           Urbana-Champaign and worked in the <a
             href="http://srg.cs.illinois.edu">Systems Research Group</a>, under 
           the guidance of Prof. Roy Campbell.  
-          Before that I worked as a Software Engineer at Google in Bangalore for 
+          Before that I worked as a Software Engineer at <a
+            href="http://www.google.com/about/jobs/locations/bangalore/">Google,
+            Bangalore</a> for 
           three years and I hold a Bachelor’s degree in Computer Science from 
           <a href="http://www.bits-pilani.ac.in">Birla Institute of Technology and
             Science, Pilani, India</a>.</p>
 
-        <h3>Projects</h3>
+        <hr>
+
+        <h3 id="projects">Publications (grouped by project)</h3>
+
+        <!-- label class="filter-type" for="filter"><h4>Presto</h4></label>
+        <input type="checkbox" id="filter" -->
 
         <h4>Presto</h4>
         <p>Shivaram Venkataraman, Erik Bodzsar, Indrajit Roy, Alvin AuYoung, and Robert S. Schreiber 
@@ -72,7 +117,8 @@
              with Frosting</a> - HotCloud 2012
         </p>
 
-        <h4>PBS</h4>
+        <h4>Probabilistically Bounded
+            Staleness (PBS)</h4>
         <p>Peter Bailis, Shivaram Venkataraman, Michael Franklin, Joseph M. Hellerstein, and Ion Stoica 
         <a href="publications/pbs-vldb12.pdf">Probabilistically Bounded
           Staleness for Practical Partial Quorums</a> - VLDB 2012</p>
@@ -82,6 +128,12 @@
           Consistency Metrics.</a> - Demo at SIGMOD 2013</p>
 
         <h4>Storage Systems for Non-Volatile Memory</h4>
+        <p>
+        <a href="publications/nvm-masters-thesis.pdf">
+          Storage system design for non-volatile byte-addressable memory using
+          consistent and durable data structures</a> - Masters Thesis, University of Illinois, Urbana-Champaign 2011
+        </p>
+
         <p>Shivaram Venkataraman, Niraj Tolia, Parthasarathy Ranganathan, Roy Campbell
         <a href="publications/nvm-fast11.pdf">Consistent and Durable Data Structures for Non-Volatile
              Byte-Addressable Memory</a> - FAST 2011
@@ -105,7 +157,7 @@
 
         <p>Ellick Chan, Shivaram Venkataraman, Nadia Tkach, Kevin Larson, Alejandro Gutierrez and Roy H. Campbell 
         <a href="publications/cafegrind-sadfe11.pdf">Characterizing Data
-          Structures for Volatile Forensics</a> Sixth International Workshop on Systematic Approaches to Digital 
+          Structures for Volatile Forensics</a> Workshop on Systematic Approaches to Digital 
         Forensic Engineering (SADFE) In conjunction with IEEE Security and Privacy Symposium, Oakland, California, May, 2011</p>
 
         <p>Elllick Chan, Shivaram Venkataraman, Francis David, Amey Chaugule, Roy Campbell
@@ -131,6 +183,31 @@
         Poster Session at the 9th USENIX Symposium on Operating Systems Design
         and Implementation (OSDI 2010), Vancouver, BC, Canada, October 2010
         (pdf)</p -->
+
+        <hr>
+
+        <h3 id="talks">Talks</h3>
+        <p>
+        <em>Consistent and Durable Data Structures for Non-Volatile Byte-Addressable Memory</em> at FAST 2011
+        <a href="talks/nvm-fast11-talk.pdf">pdf</a>
+        </p>
+        <p>
+        <em>Using R for Iterative and Incremental Processing</em> at HotCloud 2012
+        <a href="talks/presto-hotcloud12-talk.pdf">pdf</a>
+        </p>
+        <p>
+        <em>Probabilistically Bounded Staleness for Practical Partial Quorums</em> 
+        at VLDB 2012, joint talk with Peter Bailis  <a href="talks/pbs-vldb12-talk.pdf">pdf</a>
+        </p>
+
+        <hr>
+
+        <h3 id="contact">Contact</h3>
+
+        <h4><p>Email: shivaram dot venkataraman at gmail.com or
+        shivaram at cs.berkeley.edu</p></h4>
+
+        <h4><p>GitHub: @shivaram</p> </h4>
 
         </section>
 
