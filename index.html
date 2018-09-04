@@ -35,6 +35,8 @@
 
         <header>
         <h1 style="text-align:center;">Shivaram Venkataraman</h1>
+        <h4 style="text-align:center;">Assistant Professor, Computer Science, University of Wisconsin-Madison</h4>
+        <h4 style="text-align:center;">Office: 7367 CS. Email: shivaram at cs.wisc.edu</h4>
         </header>
 
         <!-- section id="downloads" class="clearfix">
@@ -46,28 +48,22 @@
           <tr>
             <td width="25%" style="border:0px;">
             <h3>
-            <a href="#projects" class="link">
-              Projects
+            <a href="#teaching" class="link">
+              Teaching
             </a>
             </h3>
+            </td>
             <td width="25%" style="border:0px;">
             <h3>
-            <a href="#pubs" class="link">
+            <a href="#pubs">
               Publications
             </a>
             </h3>
             </td>
             <td width="25%" style="border:0px;">
             <h3>
-            <a href="#talks">
-              Talks
-            </a>
-            </h3>
-            </td>
-            <td width="25%" style="border:0px;">
-            <h3>
-            <a href="#contact">
-              Contact
+            <a href="publications/shivaram_cv.pdf">
+              CV
             </a>
             </h3>
             </td>
@@ -81,21 +77,24 @@
         <section id="main_content">
         <!-- <h3>About</h3> -->
 
-        <p>I am a PhD candidate in Computer Science at UC Berkeley. I am a part of the <a
-          href="http://amplab.cs.berkeley.edu">AMPLab</a> and I am advised by
-          <a href="http://cs.berkeley.edu/~istoica">Ion Stoica</a> and <a
-            href="http://cs.berkeley.edu/~franklin">Mike Franklin</a>.
-        My research interests are in designing systems and algorithms for large scale data
-        analysis.
-        Before coming to Berkeley, I completed my Masters at University of Illinois at
-          Urbana-Champaign and worked in the <a
-            href="http://srg.cs.illinois.edu">Systems Research Group</a>, with
-          Prof. Roy Campbell.
+        <p>I am an Assistant Professor in the <a href="http://cs.wisc.edu">Computer Science Department</a> at University of Wisconsin, Madison. 
+        My research interests are in designing systems and algorithms for large scale data analysis and machine learning. 
+        My <a href="projects.html">dissertation research</a>  looked at abstractions that make it
+        easier to express new machine learning algorithms and systems that can improve their
+        performance.
         </p>
 
-        <p style="text-align:center;font-weight:500">I will be joining <a
-          href="http://cs.wisc.edu">University of Wisconsin, Madison</a> as an assistant professor in Fall 2018 !
+        <p>
+        Before coming to Madison, I was a post-doctoral research in the <a href="https://www.microsoft.com/en-us/research/group/systems-research-group-redmond/">Systems
+        Research Group</a> at Microsoft Research in Redmond. Previously, I completed my PhD from UC Berkeley where I was advised by
+        <a href="http://cs.berkeley.edu/~istoica">Ion Stoica</a> and <a href="https://cs.uchicago.edu/directory/michael-franklin">Mike Franklin</a>.
+        I also have a Masters from University of Illinois at Urbana-Champaign and worked in the <a href="http://srg.cs.illinois.edu">Systems Research Group</a>, with
+        Prof. Roy Campbell.
         </p>
+
+        <!-- p style="text-align:center;font-weight:500">I will be joining <a
+          href="http://cs.wisc.edu">University of Wisconsin, Madison</a> as an assistant professor in Fall 2018 !
+        </p -->
 
         <!-- p style="text-align:center;font-weight:500">I am graduating in May 2017 and am looking for academic jobs.<br>
           <a href="application/shivaram_cv.pdf"> CV </a> -
@@ -117,87 +116,43 @@
 
         <hr>
 
-        <h3 id="projects">Selected Projects</h3>
-
-        <p><strong>Efficient Performance Modeling</strong>: 
-        Configuring and deploying large scale analytics in the cloud is challenging
-        as it is often unclear what the appropriate configuration is for a given workload. 
-        Ernest is a performance modeling framework that can be used to predict the optimal
-        cluster configuration. 
-        Ernest minimizes the resources used to build a performance model by training on small 
-        samples of data and then predicts
-        performance on larger datasets and cluster sizes. We also studied how this can be used
-        to model algorithm convergence rates in Hemingway.
-       
-       <!-- To minimize the time spent
-        in
-        building a model, Ernest uses optimal experiment design
-        to
-        collect as few training points as required.-->
+        <h3 id="teaching">Teaching</h3>
+        <p>CS 744 Big Data Systems: <a href="http://pages.cs.wisc.edu/~shivaram/cs744-fa18">Fall 2018</a></p>
         
-        <br>
-        Ernest: <a href="publications/ernest-nsdi.pdf">NSDI 2016</a> -
-        <a href="http://github.com/amplab/ernest">Source Code</a> |
-        Hemingway: <a href="http://arxiv.org/abs/1702.05865">Learning Systems Workshop, NIPS 2016</a>
-        </style>
-        </p>
-
-        <p><strong>Low Latency Scheduling</strong> 
-         Schedulers used in analytics frameworks aim to minimize the amount of time spent in accessing data
-         while ensuring coordination overheads are not high. While centralized batch systems provide 
-         optimal scheduling decisions and fault tolerance, they impose a high overhead for low latency workloads.
-        On the other hand streaming systems provide low latency during normal execution but incur high
-        latency while recovering from faults. To address this we built Drizzle, a scheduling framework that combines the benefits of
-        batch processing and streaming systems by using coarse-grained scheduling with fine-grained
-        execution.
-        Further, to improve data locality for ML algorithms my work has also studied scheduling techniques (KMN) that
-        can leverage the fact that algorithms operate on a sample of the input data.
-
-        <br>
-        Drizzle: <a href="publications/drizzle-sosp17.pdf">SOSP 2017</a> -
-        <a href="http://github.com/amplab/drizzle-spark">Source Code</a> |
-        KMN: <a href="publications/kmn-osdi-final.pdf">OSDI 2014</a>
-        </p>
-
-        <p><strong>ML Pipelines</strong>: 
-        A number of real-world machine learning applications
-        require the combination of multiple algorithms. For example a text
-        classification program might featurize data using TF-IDF scores, then perform
-        dimension reduction using PCA and finally learn a model using logistic
-        regression. We proposed machine learning
-        pipelines as an abstraction that allows users to compose simple operators and form end-to-end pipelines.
-        In the KeystoneML project we further studied a number of optimizations enabled by our high
-        level API.
-        <br>
-        KeystoneML: <a href="publications/keystoneml-icde17.pdf">ICDE 2017</a> -
-        <a href="http://github.com/amplab/keystone">Source Code</a> |
-        SparkML: <a
-          href="https://databricks.com/blog/2015/01/07/ml-pipelines-a-new-high-level-api-for-mllib.html">Blog Post </a>
-        </p>
-
-        <p><strong>Scaling R Programs</strong>
-        R is a widely statistical programming language, but data analysis using R is limited by the 
-        memory available on a single machine. In DistributedR, we proposed a distributed array based
-        abstraction and developed techniques to efficiently share data across multiple-cores and
-        mitigate load imbalance for sparse matrix based algorithms. Further, to enable large scale structured data
-        processing, we developed SparkR, an R package for Apache Spark. SparkR uses distributed data 
-        frames as a unifying abstraction to provide support for SQL queries and machine learning
-        algorithms from R.
-
-        <br>
-        DistributedR: <a href="publications/presto-eurosys13.pdf">Eurosys 2013</a> -
-        <a href="publications/presto-hotcloud12.pdf">HotCloud 2012</a> -
-        <a href="https://github.com/vertica/distributedr">Source Code</a> |
-        SparkR: <a href="publications/sparkr-sigmod.pdf">SIGMOD 2016</a> -
-        <a href="https://github.com/apache/spark/tree/master/R">Source Code</a>
-        </p>
+        <hr>
 
         <h3 id="pubs">Publications</h3>
 
         <!-- label class="filter-type" for="filter"><h4>Presto</h4></label>
         <input type="checkbox" id="filter" -->
 
+        <h4>2018</h4>
+        <p>
+         Anand Padmanabha Iyer, Zaoxing Liu and Xin Jin, Shivaram Venkataraman, Vladimir Braverman, Ion Stoica 
+         <a href="javascript:void(0);">ASAP: Fast, Approximate Pattern Mining at Scale</a> - OSDI 2018
+        </p>
+
+        <p>Kevin Hsieh, Ganesh Ananthanarayanan, Peter Bodik, Shivaram Venkataraman, Paramvir Bahl, and Matthai Philipose, Phillip B. Gibbons, Onur Mutlu 
+        <a href="javascript:void(0);">Focus: Querying Large Video Datasets with Low Latency and Low Cost</a> - OSDI 2018
+        </p>
+
+        <p>Luo Mai, Kai Zeng, Rahul Potharaju, Le Xu, Steve Suh, Shivaram Venkataraman, Paolo Costa,
+        Terry Kim, Saravanam Muthukrishnan, Vamsi Kuppa, Sudheer Dhulipalla, Sriram Rao
+        <a href="publications/chi-vldb18.pdf">Chi: A Scalable and Programmable Control Plane for Distributed Stream Processing Systems</a> - VLDB 2018
+
+        <p>Anand Iyer, Aurojit Panda, Shivaram Venkatraman, Mosharaf Chowdhury, Aditya Akella, Scott Shenker, Ion Stoica
+        <a href="publications/gap-grades18.pdf">Bridging the GAP: Towards Approximate Graph
+          Analytics</a> - GRADES-NDA 2018.
+
+        <p>Anand Iyer, Zaoxing Liu, Xin Jin, Shivaram Venkataraman, Vladimir Braverman, Ion Stoica
+        <a href="publications/asap-hotcloud18.pdf">Towards Fast and Scalable Graph Pattern
+          Mining</a> - HotCloud 2018
+
         <h4>2017</h4>
+
+        <p>
+        Shivaram Venkataraman
+        <a href="publications/shivaram-dissertation.pdf">System Design for Large Scale Machine Learning</a> - PhD Dissertation
 
         <p>
         Shivaram Venkataraman, Aurojit Panda, Kay Ousterhout, Michael Armbrust, Ali Ghodsi, Michael J. Franklin, Benjamin Recht, Ion Stoica
@@ -272,6 +227,7 @@
 
 
         <h4>2014</h4>
+
         <p> Shivaram Venkataraman, Aurojit Panda, Ganesh Ananthanarayanan, Michael Franklin, Ion Stoica
             <a href="publications/kmn-osdi-final.pdf">The Power of Choice in Data-Aware Cluster Scheduling</a> - OSDI 2014
         </p>
@@ -378,8 +334,8 @@
 
         <hr>
 
-        <h3 id="talks">Selected Talks</h3>
-          <p>
+        <!-- h3 id="talks">Selected Talks</h3 -->
+          <!-- p>
           <em>Low Latency Execution for Apache Spark</em> at
             <a href="https://spark-summit.org/2016/events/low-latency-execution-for-apache-spark/">Spark Summit 2016</a>
           </p>
@@ -411,20 +367,10 @@
             <em>Consistent and Durable Data Structures for Non-Volatile Byte-Addressable Memory</em> at
             <a href="talks/nvm-fast11-talk.pdf">FAST 2011</a>
           </p>
-        <hr>
+        <hr-->
 
-        <h3 id="contact">Contact</h3>
-
-        <h4><p>Email: shivaram dot venkataraman at gmail.com or
-        shivaram at cs.berkeley.edu</p></h4>
-
-        <h4><p>GitHub: <a href="http://github.com/shivaram">@shivaram</a></p> </h4>
 
         </section>
-
-        <footer>
-        This page was created using <a href="http://pages.github.com">GitHub Pages</a>, based on Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
 
       </div>
     </div>

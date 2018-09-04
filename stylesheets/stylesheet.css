@@ -64,6 +64,10 @@ a:hover {
   color: #c5000c;
 }
 
+a.nocolor {
+  color: #303030;
+}
+
 header {
   padding-top: 35px;
   padding-bottom: 25px;

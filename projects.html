@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Shivaram Venkataraman</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39929561-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1 style="text-align:center;"><a class="nocolor" href="index.html">Shivaram Venkataraman</a></h1>
+    		<h4 style="text-align:center;">Assistant Professor, Computer Science, University of Wisconsin-Madison</h4>
+				<h4 style="text-align:center;">Office: 7367 CS. Email: shivaram at cs.wisc.edu</h4>
+        </header>
+
+        <!-- section id="downloads" class="clearfix">
+        <a href="https://github.com/shivaram" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section -->
+
+        <section id="links">
+        <table style="border:0px">
+          <tr>
+            <td width="25%" style="border:0px;">
+            <h3>
+            <a href="index.html#teaching" class="link">
+              Teaching
+            </a>
+            </h3>
+            </td>
+            <td width="25%" style="border:0px;">
+            <h3>
+            <a href="index.html#pubs">
+              Publications
+            </a>
+            </h3>
+            </td>
+            <td width="25%" style="border:0px;">
+            <h3>
+            <a href="publications/shivaram_cv.pdf">
+              CV
+            </a>
+            </h3>
+            </td>
+          </tr>
+        </table>
+        </h3>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+
+        <h3 id="projects">Past Projects</h3>
+
+        <p><strong>Efficient Performance Modeling</strong>: 
+        Configuring and deploying large scale analytics in the cloud is challenging
+        as it is often unclear what the appropriate configuration is for a given workload. 
+        Ernest is a performance modeling framework that can be used to predict the optimal
+        cluster configuration. 
+        Ernest minimizes the resources used to build a performance model by training on small 
+        samples of data and then predicts
+        performance on larger datasets and cluster sizes. We also studied how this can be used
+        to model algorithm convergence rates in Hemingway.
+       
+       <!-- To minimize the time spent
+        in
+        building a model, Ernest uses optimal experiment design
+        to
+        collect as few training points as required.-->
+        
+        <br>
+        Ernest: <a href="publications/ernest-nsdi.pdf">NSDI 2016</a> -
+        <a href="http://github.com/amplab/ernest">Source Code</a> |
+        Hemingway: <a href="http://arxiv.org/abs/1702.05865">Learning Systems Workshop, NIPS 2016</a>
+        </style>
+        </p>
+
+        <p><strong>Low Latency Scheduling</strong> 
+         Schedulers used in analytics frameworks aim to minimize the amount of time spent in accessing data
+         while ensuring coordination overheads are not high. While centralized batch systems provide 
+         optimal scheduling decisions and fault tolerance, they impose a high overhead for low latency workloads.
+        On the other hand streaming systems provide low latency during normal execution but incur high
+        latency while recovering from faults. To address this we built Drizzle, a scheduling framework that combines the benefits of
+        batch processing and streaming systems by using coarse-grained scheduling with fine-grained
+        execution.
+        Further, to improve data locality for ML algorithms my work has also studied scheduling techniques (KMN) that
+        can leverage the fact that algorithms operate on a sample of the input data.
+
+        <br>
+        Drizzle: <a href="publications/drizzle-sosp17.pdf">SOSP 2017</a> -
+        <a href="http://github.com/amplab/drizzle-spark">Source Code</a> |
+        KMN: <a href="publications/kmn-osdi-final.pdf">OSDI 2014</a>
+        </p>
+
+        <p><strong>ML Pipelines</strong>: 
+        A number of real-world machine learning applications
+        require the combination of multiple algorithms. For example a text
+        classification program might featurize data using TF-IDF scores, then perform
+        dimension reduction using PCA and finally learn a model using logistic
+        regression. We proposed machine learning
+        pipelines as an abstraction that allows users to compose simple operators and form end-to-end pipelines.
+        In the KeystoneML project we further studied a number of optimizations enabled by our high
+        level API.
+        <br>
+        KeystoneML: <a href="publications/keystoneml-icde17.pdf">ICDE 2017</a> -
+        <a href="http://github.com/amplab/keystone">Source Code</a> |
+        SparkML: <a
+          href="https://databricks.com/blog/2015/01/07/ml-pipelines-a-new-high-level-api-for-mllib.html">Blog Post </a>
+        </p>
+
+        <p><strong>Scaling R Programs</strong>
+        R is a widely statistical programming language, but data analysis using R is limited by the 
+        memory available on a single machine. In DistributedR, we proposed a distributed array based
+        abstraction and developed techniques to efficiently share data across multiple-cores and
+        mitigate load imbalance for sparse matrix based algorithms. Further, to enable large scale structured data
+        processing, we developed SparkR, an R package for Apache Spark. SparkR uses distributed data 
+        frames as a unifying abstraction to provide support for SQL queries and machine learning
+        algorithms from R.
+
+        <br>
+        DistributedR: <a href="publications/presto-eurosys13.pdf">Eurosys 2013</a> -
+        <a href="publications/presto-hotcloud12.pdf">HotCloud 2012</a> -
+        <a href="https://github.com/vertica/distributedr">Source Code</a> |
+        SparkR: <a href="publications/sparkr-sigmod.pdf">SIGMOD 2016</a> -
+        <a href="https://github.com/apache/spark/tree/master/R">Source Code</a>
+        </p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
