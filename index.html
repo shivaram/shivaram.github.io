@@ -36,6 +36,69 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
+
+    <style>
+      .alumni-section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        user-select: none;
+        padding: 8px 10px;
+        background-color: #f8f8f8;
+        border-left: 3px solid #c41e3a;
+        margin: 10px 0 5px 0;
+        max-width: 600px;
+      }
+      .alumni-section-header:hover {
+        background-color: #efefef;
+      }
+      .alumni-section-header h4 {
+        margin: 0;
+        flex-grow: 1;
+      }
+      .toggle-btn {
+        font-size: 18px;
+        font-weight: bold;
+        color: #c41e3a;
+        min-width: 25px;
+        text-align: center;
+      }
+      .alumni-content {
+        display: none;
+      }
+      .alumni-content.expanded {
+        display: block;
+      }
+      .research-areas li {
+        margin-bottom: 10px;
+      }
+      .research-areas li b {
+        font-size: 1.05em;
+        color: #111;
+      }
+      .two-col-list {
+        columns: 2;
+        -webkit-columns: 2;
+        column-gap: 30px;
+        list-style-position: inside;
+      }
+    </style>
+
+    <script>
+      function toggleAlumni(sectionId) {
+        var content = document.getElementById(sectionId);
+        var btn = document.getElementById(sectionId + '-btn');
+
+        if (content.classList.contains('expanded')) {
+          content.classList.remove('expanded');
+          btn.textContent = '+';
+        } else {
+          content.classList.add('expanded');
+          btn.textContent = '−';
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -46,6 +109,11 @@
         <h1 style="text-align:center;">Shivaram Venkataraman</h1>
         <h4 style="text-align:center;">Associate Professor, Computer Science, University of Wisconsin-Madison</h4>
         <h4 style="text-align:center;">Office: 7576 MH. Email: shivaram at cs.wisc.edu</h4>
+        <p style="text-align:center;">
+          <a href="https://scholar.google.com/citations?user=5LLV29oAAAAJ">Google Scholar</a> &nbsp;|&nbsp;
+          <a href="https://dblp.org/pid/65/8569.html">DBLP</a> &nbsp;|&nbsp;
+          <a href="https://github.com/shivaram">GitHub</a>
+        </p>
         </header>
 
         <!-- section id="downloads" class="clearfix">
@@ -55,34 +123,34 @@
         <section id="links">
         <table style="border:0px">
           <tr>
-            <td width="25%" style="border:0px;">
-            <h3>
-            <a href="#teaching" class="link">
-              Teaching
-            </a>
-            </h3>
-            </td>
-            <td width="25%" style="border:0px;">
+            <td width="20%" style="border:0px;">
             <h3>
             <a href="#students" class="link">
               Group
             </a>
             </h3>
             </td>
-            <td width="25%" style="border:0px;">
+            <td width="20%" style="border:0px;">
+            <h3>
+            <a href="#research" class="link">
+              Research
+            </a>
+            </h3>
+            </td>
+            <td width="20%" style="border:0px;">
+            <h3>
+            <a href="#teaching" class="link">
+              Teaching
+            </a>
+            </h3>
+            </td>
+            <td width="20%" style="border:0px;">
             <h3>
             <a href="#pubs">
               Publications
             </a>
             </h3>
             </td>
-            <!-- td width="25%" style="border:0px;">
-            <h3>
-            <a href="publications/shivaram_cv.pdf">
-              CV
-            </a>
-            </h3>
-            </td -->
           </tr>
         </table>
         </h3>
@@ -132,13 +200,86 @@
 
         <hr>
 
+        <h3 id="students">Group</h3>
+        <ul class="two-col-list">
+          <li>Rutwik Jain (co-advised with Matt Sinclair)</li>
+          <li>Brandon Tran (co-advised with Matt Sinclair)</li>
+          <li>Minghao Yan</li>
+          <li>Johannes Freischuetz</li>
+          <li>Tzu-Tao Chang</li>
+          <li>Fanchao Chen</li>
+          <li>Tareq Mahmood</li>
+          <li>Seth Ockerman</li>
+        </ul>
+
+        <div class="alumni-section-header" onclick="toggleAlumni('all-alumni')">
+          <h3 id="alumni" style="margin:0;">Alumni</h3>
+          <span class="toggle-btn" id="all-alumni-btn">+</span>
+        </div>
+
+        <div class="alumni-content" id="all-alumni">
+        <h4>PhD</h4>
+        <ul>
+          <li>Song Bian → NVIDIA Research Labs</li>
+          <li>Konstantinos Kanellis → AWS Learned Systems Group</li>
+          <li>Jason Mohoney → Post-doc at MIT</li>
+          <li>Saurabh Agarwal → Post-doc at UT-Austin</li>
+        </ul>
+
+        <h4>Post-doctoral Researchers</h4>
+        <ul>
+          <li>Pengfei Zheng → Huawei Technologies</li>
+        </ul>
+
+        <h4>MS</h4>
+        <ul>
+          <li>Devesh Sarda → Databricks</li>
+          <li>Aditi Singh → Nutanix</li>
+          <li>Mohil Patel → Oracle</li>
+          <li>Rachit Tibrewal</li>
+          <li>Olesia Elfimova → Dropbox</li>
+          <li>Adarsh Kumar → Amazon Alexa AI</li>
+          <li>Arjun Balasubramanian → Amazon AWS</li>
+        </ul>
+
+        <h4>BS</h4>
+        <ul>
+          <li>Wei Hao → Columbia</li>
+          <li>Yiheng Xu → Maryland</li>
+          <li>Yuhan Liu → UChicago</li>
+          <li>Ziyi Zhang → UChicago</li>
+          <li>Rui Pan → Princeton</li>
+          <li>Lynn Liu → UC Berkeley</li>
+          <li>Prasoon Sinha → UT Austin</li>
+          <li>Anze Xie → UCSD</li>
+          <li>Anders Carlsson → Amazon</li>
+          <li>Keting Chen → Cornell</li>
+          <li>Anyong Mao → USC</li>
+        </ul>
+        </div>
+
+        <hr>
+        <h3 id="research">Current Research Areas</h3>
+
+        <ul class="research-areas">
+          <li><b>Improving LLM Inference:</b> Reducing the cost of running large language models through <a href="https://arxiv.org/abs/2501.18107">inference-efficient model architectures</a>, <a href="https://arxiv.org/abs/2412.16434">memory management</a>, and <a href="https://aclanthology.org/2025.naacl-long.328/">speculative decoding</a>.</li>
+
+          <li><b>GPU Variability &amp; Power Management:</b> Understanding how <a href="https://arxiv.org/abs/2208.11035">variability across GPUs</a> affects cluster performance through <a href="https://arxiv.org/abs/2408.11919">variability-aware scheduling</a> and <a href="#">high-fidelity GPU energy modeling</a>.</li>
+
+          <li><b>Vector Search:</b> New indexing and query methods to make vector similarity search faster and more scalable, including <a href="https://www.usenix.org/conference/osdi25/presentation/mohoney">adaptive indexes</a> and <a href="https://dl.acm.org/doi/full/10.1145/3731599.3767404">vector database deployment on HPC platforms</a>.</li>
+
+          <li><b>Integrating ML into Systems:</b> Using machine learning to improve core system components, including <a href="https://ieeexplore.ieee.org/abstract/document/11359582/">memory tiering</a> and <a href="https://dl.acm.org/doi/abs/10.1145/3689031.3717480">tuning unstable and noisy cloud applications</a>.</li>
+        </ul>
+
+        <hr>
+
         <h3 id="teaching">Teaching</h3>
         <p>CS 537 Intro to OS: <a href="http://pages.cs.wisc.edu/~shivaram/cs537-fa24">F24</a>
-                               <a href="http://pages.cs.wisc.edu/~shivaram/cs537-sp23">S23</a> 
-                               <a href="http://pages.cs.wisc.edu/~shivaram/cs537-sp20">S20</a> 
+                               <a href="http://pages.cs.wisc.edu/~shivaram/cs537-sp23">S23</a>
+                               <a href="http://pages.cs.wisc.edu/~shivaram/cs537-sp20">S20</a>
                                <a href="http://pages.cs.wisc.edu/~shivaram/cs537-sp19">S19</a>
         </p>
-        <p>CS 744 Big Data Systems: 
+        <p>CS 744 Big Data Systems:
                                     <a href="http://pages.cs.wisc.edu/~shivaram/cs744-sp25">S25</a>
                                     <a href="http://pages.cs.wisc.edu/~shivaram/cs744-sp24">S24</a>
                                     <a href="http://pages.cs.wisc.edu/~shivaram/cs744-fa22">F22</a>
@@ -147,70 +288,36 @@
                                     <a href="http://pages.cs.wisc.edu/~shivaram/cs744-fa19">F19</a>
                                     <a href="http://pages.cs.wisc.edu/~shivaram/cs744-fa18">F18</a>
         </p>
-        <p>CS 839: Advanced Machine Learning Systems: <a href="http://pages.cs.wisc.edu/~shivaram/cs839-sp22">S22</a> 
+        <p>CS 839: Advanced Machine Learning Systems: <a href="http://pages.cs.wisc.edu/~shivaram/cs839-sp22">S22</a>
         </p>
-        
+
         <hr>
+        <h3 id="pubs">Selected Recent Publications</h3>
 
-        <h3 id="students">Group</h3>
-        <ul>
-          <li>Konstantinos Kanellis (Phd Student)</li>
-          <li>Rutwik Jain (Phd Student, co-advised with Matt Sinclair)</li>
-          <li>Brandon Tran (Phd Student, co-advised with Matt Sinclair)</li>
-          <li>Song Bian (Phd Student)</li>
-          <li>Minghao Yan (Phd Student)</li>
-          <li>Johannes Freischuetz (Phd Student)</li>
-          <li>Tzu-Tao Chang (Phd Student)</li>
-          <li>Fanchao Chen (Phd Student)</li>
-          <li>Tareq Mahmood (Phd Student)</li>
-          <li>Seth Ockerman (Phd Student)</li>
-        </ul>
+        <p>Brandon Tran, Matt Sinclair, Shivaram Venkataraman, Matthias Maiterth, Woong Shin
+        <a href="#"><em>Wattchmen: Watching the Wattchers – High Fidelity, Flexible GPU Energy Modeling</em></a> -
+        ICS 2026 <span style="font-size:0.85em; color:#888;">(to appear)</span>
+        </p>
 
-        <h3 id="students">Alumni</h3>
-        <ul>
-          <li>Jason Mohoney (Phd to Post-doc at MIT)</li>
-          <li>Saurabh Agarwal (Phd to Post-doc at UT-Austin)</li>
-          <li>Pengfei Zheng (Post-doc, co-advised with Aditya Akella)</li>
-          <li>Aditi Singh (MS)</li>
-          <li>Rachit Tibrewal (MS)</li>
-          <li>Olesia Elfimova (MS, to Dropbox)</li>
-          <li>Adarsh Kumar (MS, to Amazon Alexa AI)</li>
-          <li>Arjun Balasubramanian (MS, to Amazon AWS)</li>
-          <li>Wei Hao (BS, to Columbia)</li>
-          <li>Yiheng Xu (BS, to Maryland)</li>
-          <li>Yuhan Liu (BS, to UChicago)</li>
-          <li>Ziyi Zhang (BS, to UChicago)</li>
-          <li>Rui Pan (BS, to Princeton)</li>
-          <li>Lynn Liu (BS, to UC Berkeley)</li>
-          <li>Prasoon Sinha (BS, to UT Austin)</li>
-          <li>Anze Xie (BS, to UCSD)</li>
-          <li>Anders Carlsson (BS, to Amazon)</li>
-        </ul>
+        <p>Konstantinos Kanellis, Sujay Yadalam, Hayden Coffey, Shivaram Venkataraman, Michael Swift
+        <a href="https://ieeexplore.ieee.org/document/11359582">From Good to Great: Parameter Tuning in Memory Tiering Systems</a> -
+        IEEE Transactions on Computers 2026
+        </p>
 
-         
-        <hr>
-        <h3 id="pubs">Recent Publications</h3>
-				<p> Seth Ockerman, Amal Gueroudji, Song Young Oh, Robert Underwood, Nicholas Chia, Kyle Chard, Robert Ross, Shivaram Venkataraman <a href="https://dl.acm.org/doi/10.1145/3731599.3767404">Exploring Distributed Vector Databases Performance on HPC Platforms: A Study with Qdrant</a> - Frontiers in Generative AI for HPC Science and Engineering Workshop at Supercomputing 2025
-				</p>
+        <p>Song Bian, Tao Yu, Shivaram Venkataraman, Youngsuk Park
+        <a href="https://openreview.net/forum?id=0TmVqOpBbK">Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs</a> -
+        ICLR 2026
+        </p>
 
-        <p> Konstantinos Kanellis, Sujay Yadalam, Shivaram Venkataraman, Michael Swift <a href="https://dl.acm.org/doi/10.1145/3764862.3768172">Striking the Right Chord: Parameter Tuning in Memory Tiering Systems</a> - 3rd Workshop on Disruptive Memory Systems (DIMES) 2025, co-located with SOSP 2025
-			  </p>
+        <p>Saurabh Agarwal, Bodun Hu, Anyong Mao, Aditya Akella, Shivaram Venkataraman
+        <a href="https://arxiv.org/abs/2412.16434">Improving Memory Management for LLM Inference Workloads</a> -
+        NSDI 2026
+        </p>
 
-				<p>Seth Ockerman, Amal Gueroudji, Tanwi Mallick, Yixuan He, Rob Ross, Shivaram Venkataraman, Line Pouchard
-					<a href="https://arxiv.org/abs/2507.11683">PGT-I: Scaling Spatiotemporal GNNs with Memory-Efficient Distributed Training</a> - International Conference for High Performance Computing, Networking, Storage and Analysis (Supercomputing 2025)
-				</p>
-
-        <p>Haotian Xie, Rohan Marwaha, Minu Mathew, Song Bian, Gengcong Yang, Minghao Yan, Yadu Babuji, Owen Price, Yinzhi Wang, Volodymyr Kindratenko, Shivaram Venkataraman, Kyle Chard, Ian T. Foster, Zhao Zhang
-					<a href="https://ieeexplore.ieee.org/document/11181545">Diamond: Harnessing GPU Resources for Scientific Deep Learning</a> - IEEE Conference on eScience 2025
-				</p>
-
-        <p>Konstantinos Kanellis, Badrish Chandramouli, Ted Hart, Shivaram Venkataraman
-           <a href="https://arxiv.org/abs/2305.01516">From FASTER to F2: Evolving Concurrent Key-Value Store Designs for Large Skewed Workloads</a> - VLDB 2025
-			  </p>
-
-        <p>Seth Ockerman, Olesia Elfimova, Harsh Sapra, Sage Kokjohn, Justin Shumaker, Shivaram Venkataraman
-				<a href="https://www.sciencedirect.com/science/article/abs/pii/S0378775325012546">Exploring Selective Continuous Learning for Battery State of Charge Prediction in Real-World Dynamic Charging Scenarios</a> - Journal of Power Sources, October 2025
-				</p>
+        <p>Jason Mohoney, Devesh Sarda, Mengze Tang, Shihabur Rahman Chowdhury, Anil Pacaci, Ihab F. Ilyas, Theodoros Rekatsinas, Shivaram Venkataraman
+        <a href="https://www.usenix.org/system/files/osdi25-mohoney.pdf">Quake: Adaptive Indexing for Vector Search</a> -
+        OSDI 2025
+        </p>
 
         <p>Song Bian, Minghao Yan, Shivaram Venkataraman
         <a href="https://arxiv.org/abs/2501.18107">Scaling Inference-Efficient Language Models</a> -
@@ -222,9 +329,14 @@
         ICML 2025
         </p>
 
-        <p>Jason Mohoney, Devesh Sarda, Mengze Tang, Shihabur Rahman Chowdhury, Anil Pacaci, Ihab F. Ilyas, Theodoros Rekatsinas, Shivaram Venkataraman
-        <a href="https://www.usenix.org/system/files/osdi25-mohoney.pdf">Quake: Adaptive Indexing for Vector Search</a> -
-        OSDI 2025
+        <p>Minghao Yan, Saurabh Agarwal, Shivaram Venkataraman
+        <a href="https://arxiv.org/abs/2402.01528">Decoding Speculative Decoding</a> -
+        NAACL 2025
+        </p>
+
+        <p>Konstantinos Kanellis, Badrish Chandramouli, Ted Hart, Shivaram Venkataraman
+        <a href="https://arxiv.org/abs/2305.01516">From FASTER to F2: Evolving Concurrent Key-Value Store Designs for Large Skewed Workloads</a> -
+        VLDB 2025
         </p>
 
         <p>Tzu-Tao Chang, Shivaram Venkataraman
@@ -237,222 +349,11 @@
         Eurosys 2025
         </p>
 
-        <p>Minghao Yan, Saurabh Agarwal, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2402.01528">Decoding Speculative Decoding</a> -
-        NAACL 2025
+        <p>Seth Ockerman, Amal Gueroudji, Tanwi Mallick, Yixuan He, Line Pouchard, Rob Ross, Shivaram Venkataraman
+        <a href="https://arxiv.org/abs/2507.11683">PGT-I: Scaling Spatiotemporal GNNs with Memory-Efficient Distributed Training</a> -
+        Supercomputing 2025
         </p>
 
-        <p>Roger Waleffe, Devesh Sarda, Jason Mohoney, Emmanouil-Vasileios Vlatakis-Gkaragkounis, Theodoros Rekatsinas, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2502.17846">Armada: Memory-Efficient Distributed Training of Large-Scale Graph Neural
-          Networks</a> - arXiv preprint
-        </p>
-        
-        <h4>2024</h4>
-
-        <p>
-        Meguru Yamazaki, Shivaram Venkataraman
-        <a href="https://openreview.net/forum?id=02zPmtcZa0&noteId=KJTEXbDRL0">CO2: Precise Attention Score Observation for improving KV
-          Cache Replacement in Large Language Model</a> - Efficient Systems for Foundation Models
-         (ES-FoMO) Workshop at the International Conference on Machine Learning (ICML) 2024
-        </p>
-
-        <p>
-        Rutwik Jain, Brandon Tran, Keting Chen, Matthew Sinclair, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2408.11919">
-         PAL: A Variability-Aware Policy for Scheduling ML Workloads in GPU Clusters 
-        </a> - International Conference for High Performance Computing, Networking, Storage and Analysis (Supercomputing 2024)
-        </p>
-
-        <p>Konstantinos Kanellis, Johannes Freischuetz, Shivaram Venkataraman <a href="https://dl.acm.org/doi/pdf/10.1145/3650203.3663336">Nautilus: A Benchmarking
-          Platform for DBMS Knob Tuning</a> - DEEM Workshop 2024
-        </p>
-
-        <p>Saurabh Agarwal, Bilge Acun, Basil Homer, Mostafa Elhoushi, Yejin Lee, Shivaram Venkataraman, Dimitris Papailiopoulos, Carole-Jean Wu
-           <a href="https://arxiv.org/abs/2403.08058">CHAI: Clustered Head Attention for Efficient
-             LLM Inference</a> - ICML 2024
-        </p>
-
-        <p>Song Bian, Dacheng Li, Hongyi Wang, Eric Xing, Shivaram Venkataraman <a
-          href="https://proceedings.mlsys.org/paper_files/paper/2024/file/71381211d0abef73ed1887b83c4547b1-Paper-Conference.pdf">Does
-          compressing activations help model parallel training?</a> - MLSys 2024
-        </p>
-
-        <p>Saurabh Agarwal, Amar Phanishayee, Shivaram Venkataraman <a href="https://arxiv.org/abs/2312.12621">Blox: A
-          Modular Toolkit for Deep Learning Schedulers</a> - Eurosys 2024
-        </p>
-
-        <h4>2023</h4>
-
-        <p>
-        Saurabh Agarwal, Chengpo Yan, Ziyi Zhang, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2202.12429">
-          BagPipe: Accelerating Deep Recommendation Model Training
-        </a> - SOSP 2023
-        </p>
-
-        <p>
-        Qiyang Ding, Pengfei Zheng, Shreyas Kudari, Shivaram Venkataraman, Zhao Zhang
-        <a href="https://arxiv.org/abs/2306.14086"> Mirage: Towards Low-interruption Services on Batch GPU
-          clusters with Reinforcement Learning
-        </a> - International Conference for High Performance Computing, Networking, Storage and
-        Analysis (Supercomputing 2023)
-        </p>
-
-        <p>
-        Roger Waleffe, Jason Mohoney, Theodoros Rekatsinas, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2202.02365">
-          MariusGNN: Resource-Efficient Out-of-Core Training of Graph Neural Networks
-        </a> - Eurosys 2023
-        </p>
-
-        <p>
-        Pengfei Zheng, Rui Pan, Tarannum Khan,  Shivaram Venkataraman, Aditya Akella
-        <a href="https://arxiv.org/abs/2210.00093">Shockwave: Fair and Efficient Cluster Scheduling for Dynamic
-          Adaptation in Machine Learning</a> - NSDI 2023
-        </p>
-
-        <p>
-        Harsh Darshan Sapra, Olesia Elfimova, Sahana Upadhya, Lukas Desorcy, Michael Wagner,
-        Shivaram Venkataraman, Chol-Bum Kweon, Sage Kokjohn, Justin Shumaker <a href="https://www.sae.org/publications/technical-papers/content/2023-01-0522/">Estimating
-          Battery State-of-Charge within 1% using Machine Learning and Physics-based Models</a> - SAE World Congress 2023
-
-        <h4>2022</h4>
-        <p>
-        Prasoon Sinha, Akhil Guliani, Rutwik Jain, Matthew Sinclair, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2208.11035">
-          Not All GPUs Are Created Equal: Characterizing Variability in Large-Scale, Accelerator-Rich Systems
-        </a> - International Conference for High Performance Computing, Networking, Storage and
-        Analysis (Supercomputing 2022)
-        </p>
-
-        <p>
-        Konstantinos Kanellis, Cong Ding, Brian Kroth, Andreas Müller, Carlo Curino, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2203.05128">
-          LlamaTune: Sample-Efficient DBMS Configuration Tuning
-        </a> - VLDB 2022
-        </p>
-
-        <p>
-        Saurabh Agarwal, Hongyi Wang, Shivaram Venkataraman, Dimitris Papailiopoulos
-        <a href="https://arxiv.org/abs/2103.00543">
-          On the Utility of Gradient Compression in Distributed Training Systems
-        </a> - MLSys 2022
-        </p>
-
-        <h4>2021</h4>
-
-        <p>
-        Anze Xie, Anders Carlsson, Jason Mohoney, Roger Waleffe , Shanan Peters, Theodoros Rekatsinas, Shivaram Venkataraman
-        <a href="http://vldb.org/pvldb/vol14/p2759-mohoney.pdf">
-          Demonstration of Marius: Graph Embeddings with a Single Machine
-        </a> - VLDB 2021
-        </p>
-
-        <p>
-        Adarsh Kumar, Kausik Subramanian, Shivaram Venkataraman, Aditya Akella
-        <a href="https://dl.acm.org/doi/10.1145/3488659.3493778">Doing more by doing less: how structured partial backpropagation improves deep
-          learning clusters</a>
-        - DistributedML Workshop at CoNEXT 2021
-        </p>
-
-        <p>
-        Gregory Pauloski, Qi Huang, Lei Huang, Shivaram Venkataraman, Kyle Chard, Ian Foster, Zhao Zhang
-        <a href="https://arxiv.org/abs/2107.01739">
-          KAISA: An Adaptive Second-order Optimizer Framework for Deep Neural Networks
-        </a> - International Conference for High Performance Computing, Networking, Storage and Analysis (SC21)
-        </p>
-
-        <p>
-        Jason Mohoney, Roger Waleffe, Yiheng Xu, Theodoros Rekatsinas, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2101.08358">
-          Marius: Learning Massive Graph Embeddings on a Single Machine
-        </a> - OSDI 2021
-        </p>
-
-        <p>
-        Arjun Singhvi, Arjun Balasubramanian, Kevin Houck, Mohammed Danish Shaikh, Shivaram Venkataraman, Aditya Akella
-        <a href="https://dl.acm.org/doi/10.1145/3472883.3486981">Atoll: A Scalable Low-Latency Serverless Platform</a>
-        </a> - SoCC 2021
-        </p>
-
-        <p>
-        Saurabh Agarwal, Hongyi Wang, Kangwook Lee, Shivaram Venkataraman, Dimitris Papailiopoulos
-        <a href="https://arxiv.org/abs/2010.16248">Accordion: Adaptive Gradient Communication via Critical Learning Regime Identification
-        </a> - MLSys 2021
-        </p>
-
-				<p>
-        Le Xu, Shivaram Venkataraman, Indranil Gupta, Luo Mai and Rahul Potharaju
-        <a href="https://arxiv.org/abs/2010.03035">
-          Move Fast and Meet Deadlines: Fine-grained Real-time Stream Processing with Cameo
-        </a> - NSDI 2021
-        </p>
-
-        <p>
-        Yuhan Liu, Saurabh Agarwal, Shivaram Venkataraman
-        <a href="https://arxiv.org/abs/2102.01386">
-          AutoFreeze: Automatically Freezing Model Blocks to Accelerate Fine-tuning
-        </a> - arXiv preprint <a href="https://github.com/uw-mad-dash/AutoFreeze">code</a>
-        </p>
-        
-        <p>
-        Arjun Balasubramanian, Adarsh Kumar, Yuhan Liu, Han Cao, Shivaram Venkataraman, Aditya Akella
-        <a href="https://arxiv.org/abs/2101.07344">
-          Accelerating Deep Learning Inference via Learned Caches
-        </a> - arXiv preprint
-        </p>
-
-        <h4>2020</h4>
-
-				<p>
-        Vaishaal Shankar, Karl Krauth, Kailas Vodrahalli, Qifan Pu, Ion Stoica, Benjamin Recht, Jonathan Ragan-Kelley, Eric Jonas, Shivaram Venkataraman
-        <a href="https://dl.acm.org/doi/10.1145/3419111.3421287">Serverless Linear Algebra</a> - SoCC 2020
-        </p>
-
-				<p>
-				Konstantinos Kanellis, Ramnatthan Alagappan, Shivaram Venkataraman. 
-        <a href="https://www.usenix.org/conference/hotstorage20/presentation/kanellis"> 
-          Too Many Knobs to Tune? Towards Faster Database Tuning by Pre-selecting Important Knobs
-        </a> - HotStorage 2020
-			  </p>
-
-				<p>
-					Kshiteej Mahajan, Arjun Balasubramanian, Arjun Singhvi, Shivaram Venkataraman, and Aditya Akella, Amar Phanishayee, Shuchi Chawla.
-        <a href="publications/themis-nsdi2020.pdf">
-					Themis: Fair and Efficient GPU Cluster Scheduling
-				</a> - NSDI 2020
-			  </p>
-
-					Guanhua Wang, Shivaram Venkataraman, Amar Phanishayee, Nikhil Devanur, Jorgen Thelin, Ion Stoica
-        <a href="publications/blink-mlsys2020.pdf">
-            Blink: Fast and Generic Collectives for Distributed ML
-				</a> - MLSys 2020
-				</p>
-
-        <h4>2019</h4>
-
-        <p>
-        Jack Kosaian, K.V. Rashmi, Shivaram Venkataraman
-        <a href="publications/sosp2019parity-models.pdf">Parity Models: Erasure-Coded Resilience for Prediction Serving
-          Systems</a> - SOSP 2019
-        </p>
-
-        <p>
-        Myeongjae Jeon, Shivaram Venkataraman, Amar Phanishayee, Junjie Qian, Wencong Xiao, Fan Yang
-        <a href="https://www.usenix.org/system/files/atc19-jeon.pdf">Analysis of Large-Scale
-          Multi-Tenant GPU Clusters for DNN Training Workloads</a> - USENIX ATC 2019
-        </p>
-
-        <p>
-					John Emmons, Sadjad Fouladi, Ganesh Ananthanarayanan, Shivaram Venkataraman, Silvio Savarese, Keith Winstein
-        <a href="publications/hotvid06-final.pdf">Cracking open the DNN black-box: Video Analytics with DNNs across the Camera-Cloud Boundary</a> - 
-         Hot Topics in Video Analytics and Intelligent Edges (HotEdgeVideo 2019)
-        </p>
-
-        <p>
-         Qifan Pu, Shivaram Venkataraman, Ion Stoica 
-         <a href="publications/locus-nsdi19.pdf">Shuffling, Fast and Slow: Scalable Analytics on Serverless Infrastructure</a> - NSDI 2019
-        </p>
 
         <!--hr>
         <h4>2018</h4>
@@ -503,7 +404,7 @@
           
         <hr-->
 
-        <p> Please see <a href="publications.html"> here </a> for a complete list.
+        <p> Please see <a href="https://scholar.google.com/citations?user=5LLV29oAAAAJ"> Google Scholar </a> for a complete list.
         <hr>
 
         <!-- h3 id="talks">Selected Talks</h3 -->
